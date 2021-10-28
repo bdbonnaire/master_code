@@ -1,0 +1,151 @@
+\hypertarget{PPoint_8cpp_source}{}\doxysection{PPoint.\+cpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00001}00001 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00002}00002 \textcolor{comment}{ * =====================================================================================}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00003}00003 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00004}00004 \textcolor{comment}{ *       Filename:  PPoint.cpp}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00005}00005 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00006}00006 \textcolor{comment}{ *    Description:  }}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00007}00007 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00008}00008 \textcolor{comment}{ *        Version:  1.0}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00009}00009 \textcolor{comment}{ *        Created:  10/05/21 10:39:55}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00010}00010 \textcolor{comment}{ *       Revision:  none}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00011}00011 \textcolor{comment}{ *       Compiler:  gcc}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00012}00012 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00013}00013 \textcolor{comment}{ *         Author:  YOUR NAME (), }}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00014}00014 \textcolor{comment}{ *   Organization:  }}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00015}00015 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00016}00016 \textcolor{comment}{ * =====================================================================================}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00017}00017 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00018}00018 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00019}00019 \textcolor{preprocessor}{\#include <stdlib.h>} \textcolor{comment}{//rand, srand}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00020}00020 \textcolor{preprocessor}{\#include <typeinfo>} \textcolor{comment}{//type\_info}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00021}00021 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00022}00022 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00023}00023 \textcolor{preprocessor}{\#include <time.h>} \textcolor{comment}{// time}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00024}00024 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{PPoint_8hpp}{PPoint.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00030}00030 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# PPoint \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00032}00032 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00034}\mbox{\hyperlink{classPPoint_a417b055945ccf3a5cc22e089ebaadb9e}{00034}} \textcolor{comment}{}\mbox{\hyperlink{classPPoint_a417b055945ccf3a5cc22e089ebaadb9e}{PPoint::PPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&x\textcolor{comment}{/*0*/}, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&y\textcolor{comment}{/*0*/})}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00035}00035 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00036}00036     this-\/>x = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00037}00037     this-\/>y = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00039}00039     *(this-\/>\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}) = x;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00040}00040     *(this-\/>y) = y;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00041}00041     std::cout << \textcolor{stringliteral}{"{}type of the object created : "{}} << \textcolor{keyword}{typeid}(*this).name() << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00044}00044 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00046}\mbox{\hyperlink{classPPoint_a9b262cdf9ea5b1befe64f2c087f331af}{00046}} \textcolor{comment}{}\mbox{\hyperlink{classPPoint_a417b055945ccf3a5cc22e089ebaadb9e}{PPoint::PPoint}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPPoint}{PPoint}} \&point)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00047}00047 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00048}00048     \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00049}00049     y = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00050}00050     *\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} = *(point.\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}});}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00051}00051     *y = *(point.y);}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00052}00052     std::cout << \textcolor{stringliteral}{"{}calling PPoint copy constructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00055}00055 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00057}\mbox{\hyperlink{classPPoint_ab2dcd9bb6c1859728a4bf63130c105df}{00057}} \textcolor{comment}{}\mbox{\hyperlink{classPPoint_ab2dcd9bb6c1859728a4bf63130c105df}{PPoint::\string~PPoint}}()}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00059}00059     \textcolor{keyword}{delete} \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}};}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00060}00060     \textcolor{keyword}{delete} y;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00061}00061     std::cout << \textcolor{stringliteral}{"{}calling PPoint destructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00062}00062 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00064}00064 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00066}\mbox{\hyperlink{classPPoint_a21b69a6a589d366651de203cabe01067}{00066}} \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{classPPoint_a21b69a6a589d366651de203cabe01067}{PPoint::add}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPPoint}{PPoint}} \&p)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00067}00067 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00068}00068     *\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} += *(p.\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}});}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00069}00069     *y += *(p.y);}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00070}00070 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00072}00072 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00074}\mbox{\hyperlink{classPPoint_a9b69bb0acf619ea31976924c3064658e}{00074}} \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{classPPoint_a9b69bb0acf619ea31976924c3064658e}{PPoint::set\_coordinates}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&x, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&y)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00075}00075 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00076}00076     *(this-\/>\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}) = x;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00077}00077     *(this-\/>y) = y;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00080}00080 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00082}\mbox{\hyperlink{classPPoint_a5044cbc28927b46c98219adbecea0f9e}{00082}} \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{classPPoint_a5044cbc28927b46c98219adbecea0f9e}{PPoint::print}}()}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00083}00083 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00084}00084     std::cout << \textcolor{stringliteral}{"{}("{}} << *\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} << \textcolor{stringliteral}{"{},"{}} << *y << \textcolor{stringliteral}{"{})"{}} ;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00085}00085 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00088}00088 \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Array\_of\_PPoint \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00091}00091 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00093}\mbox{\hyperlink{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}{00093}} \textcolor{comment}{}\mbox{\hyperlink{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}{Array\_of\_PPoint::Array\_of\_PPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&len)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00095}00095     \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}} = \textcolor{keyword}{new} \mbox{\hyperlink{classPPoint}{PPoint}}[len];}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00096}00096     \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}} = len;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00097}00097 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00099}00099 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00103}\mbox{\hyperlink{classArray__of__PPoint_ae196471e17097315758e97132cfd7561}{00103}} \textcolor{comment}{}\mbox{\hyperlink{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}{Array\_of\_PPoint::Array\_of\_PPoint}}(\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&len,}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00104}00104         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&x0=0,}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00105}00105         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&x1=5,}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00106}00106         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&y0=0,}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00107}00107         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \&y1=5}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00108}00108         )}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00109}00109 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00110}00110     srand (time(NULL)); }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00111}00111     }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00112}00112     \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}} = \textcolor{keyword}{new} \mbox{\hyperlink{classPPoint}{PPoint}}[len];}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00113}00113     \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}} = len;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00115}00115     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<len; i++)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00116}00116     \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00117}00117         \textcolor{keywordtype}{int} x = rand() \% x1 + x0;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00118}00118         \textcolor{keywordtype}{int} y = rand() \% y1 + y0;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00119}00119         \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i].\mbox{\hyperlink{classPPoint_a9b69bb0acf619ea31976924c3064658e}{set\_coordinates}}(x,y);}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00123}00123 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00125}\mbox{\hyperlink{classArray__of__PPoint_acdf1c05042ae129f0e1017b9e5262bd9}{00125}} \textcolor{comment}{}\mbox{\hyperlink{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}{Array\_of\_PPoint::Array\_of\_PPoint}}(\textcolor{keyword}{const} \mbox{\hyperlink{classArray__of__PPoint}{Array\_of\_PPoint}} \&p)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00126}00126 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00127}00127     \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}} = \textcolor{keyword}{new} \mbox{\hyperlink{classPPoint}{PPoint}}[p.\mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}];}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00128}00128     \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}} = p.\mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}};}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00129}00129     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00130}00130        \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i] = p.\mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i]; }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00132}00132     std::cout << \textcolor{stringliteral}{"{}calling array copy constructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00133}00133 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00135}00135 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00137}\mbox{\hyperlink{classArray__of__PPoint_a887749705f1616da199493f045b875a6}{00137}} \textcolor{comment}{}\mbox{\hyperlink{classArray__of__PPoint_a887749705f1616da199493f045b875a6}{Array\_of\_PPoint::\string~Array\_of\_PPoint}}()}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00138}00138 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00139}00139     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00140}00140         \textcolor{keyword}{delete} \&\mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i];}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00141}00141     \textcolor{keyword}{delete} \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}};}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00142}00142     std::cout << \textcolor{stringliteral}{"{}calling array destructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00143}00143 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00145}00145 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00147}\mbox{\hyperlink{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}{00147}} \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}{Array\_of\_PPoint::add}}(\textcolor{keyword}{const} \mbox{\hyperlink{classPPoint}{PPoint}} \&p)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00148}00148 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00149}00149     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00150}00150         \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i].\mbox{\hyperlink{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}{add}}(p);}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00151}00151 \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00153}00153 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00155}\mbox{\hyperlink{classArray__of__PPoint_a36793c409f640dfc14b1ac5416ccdfc4}{00155}} \textcolor{comment}{}\textcolor{keywordtype}{void} \mbox{\hyperlink{classArray__of__PPoint_a36793c409f640dfc14b1ac5416ccdfc4}{Array\_of\_PPoint::print\_tabs}}()}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00156}00156 \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00157}00157     std::cout << \textcolor{stringliteral}{"{}index \(\backslash\)t (x,y)"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00158}00158     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00159}00159     \{}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00160}00160         std::cout << \textcolor{stringliteral}{"{}["{}} << i << \textcolor{stringliteral}{"{}]\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00161}00161         \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i].\mbox{\hyperlink{classPPoint_a5044cbc28927b46c98219adbecea0f9e}{print}}();}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00162}00162         std::cout << std::endl;}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{PPoint_8cpp_source_l00164}00164 \}}
+
+\end{DoxyCode}

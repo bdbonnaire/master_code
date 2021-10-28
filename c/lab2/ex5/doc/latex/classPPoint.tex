@@ -1,0 +1,222 @@
+\hypertarget{classPPoint}{}\doxysection{PPoint Class Reference}
+\label{classPPoint}\index{PPoint@{PPoint}}
+
+
+class defining a 2D point  
+
+
+
+
+{\ttfamily \#include $<$PPoint.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPPoint_a417b055945ccf3a5cc22e089ebaadb9e}{PPoint}} (const int \&\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}=0, const int \&y=0)
+\begin{DoxyCompactList}\small\item\em Default constructor, initiates to (0,0) if no arg is given. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPPoint_a9b262cdf9ea5b1befe64f2c087f331af}{PPoint}} (const \mbox{\hyperlink{classPPoint}{PPoint}} \&point)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPPoint_ab2dcd9bb6c1859728a4bf63130c105df}{$\sim$\+PPoint}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPPoint_a21b69a6a589d366651de203cabe01067}{add}} (const \mbox{\hyperlink{classPPoint}{PPoint}} \&p)
+\begin{DoxyCompactList}\small\item\em method to add a point to the current point \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPPoint_a9b69bb0acf619ea31976924c3064658e}{set\+\_\+coordinates}} (const int \&\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}, const int \&y)
+\begin{DoxyCompactList}\small\item\em sets the coordinates of the \mbox{\hyperlink{classPPoint}{PPoint}} to the given x and y \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPPoint_a5044cbc28927b46c98219adbecea0f9e}{print}} ()
+\begin{DoxyCompactList}\small\item\em prints the coordinates of the point in the (x,y) fashion \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}
+\begin{DoxyCompactList}\small\item\em coordinates of the 2D points \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{classPPoint_a5699b638053eea4bf624cf24b712cee3}{y}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class defining a 2D point 
+
+the coordinates are integers dynamically allocated representing a point in a cartesian plane. 
+
+Definition at line \mbox{\hyperlink{PPoint_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{PPoint_8hpp_source}{PPoint.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPPoint_a417b055945ccf3a5cc22e089ebaadb9e}\label{classPPoint_a417b055945ccf3a5cc22e089ebaadb9e}} 
+\index{PPoint@{PPoint}!PPoint@{PPoint}}
+\index{PPoint@{PPoint}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{PPoint()}{PPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily PPoint\+::\+PPoint (\begin{DoxyParamCaption}\item[{const int \&}]{x = {\ttfamily 0},  }\item[{const int \&}]{y = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Default constructor, initiates to (0,0) if no arg is given. 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00035}00035 \{}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00036}00036     this-\/>\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00037}00037     this-\/>y = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{classPPoint_l00039}00039     *(this-\/>\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}) = \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}};}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00040}00040     *(this-\/>y) = y;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00041}00041     std::cout << \textcolor{stringliteral}{"{}type of the object created : "{}} << \textcolor{keyword}{typeid}(*this).name() << std::endl;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00042}00042 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPPoint_a9b262cdf9ea5b1befe64f2c087f331af}\label{classPPoint_a9b262cdf9ea5b1befe64f2c087f331af}} 
+\index{PPoint@{PPoint}!PPoint@{PPoint}}
+\index{PPoint@{PPoint}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{PPoint()}{PPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily PPoint\+::\+PPoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPPoint}{PPoint}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00047}00047 \{}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00048}00048     \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00049}00049     y = \textcolor{keyword}{new} int;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00050}00050     *\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} = *(point.\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}});}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00051}00051     *y = *(point.y);}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00052}00052     std::cout << \textcolor{stringliteral}{"{}calling PPoint copy constructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00053}00053 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPPoint_ab2dcd9bb6c1859728a4bf63130c105df}\label{classPPoint_ab2dcd9bb6c1859728a4bf63130c105df}} 
+\index{PPoint@{PPoint}!````~PPoint@{$\sim$PPoint}}
+\index{````~PPoint@{$\sim$PPoint}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$PPoint()}{~PPoint()}}
+{\footnotesize\ttfamily PPoint\+::$\sim$\+PPoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00059}00059     \textcolor{keyword}{delete} \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}};}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00060}00060     \textcolor{keyword}{delete} y;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00061}00061     std::cout << \textcolor{stringliteral}{"{}calling PPoint destructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00062}00062 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPPoint_a21b69a6a589d366651de203cabe01067}\label{classPPoint_a21b69a6a589d366651de203cabe01067}} 
+\index{PPoint@{PPoint}!add@{add}}
+\index{add@{add}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void PPoint\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPPoint}{PPoint}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+method to add a point to the current point 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00067}00067 \{}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00068}00068     *\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} += *(p.\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}});}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00069}00069     *y += *(p.y);}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00070}00070 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPPoint_a5044cbc28927b46c98219adbecea0f9e}\label{classPPoint_a5044cbc28927b46c98219adbecea0f9e}} 
+\index{PPoint@{PPoint}!print@{print}}
+\index{print@{print}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void PPoint\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+prints the coordinates of the point in the (x,y) fashion 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00083}00083 \{}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00084}00084     std::cout << \textcolor{stringliteral}{"{}("{}} << *\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}} << \textcolor{stringliteral}{"{},"{}} << *y << \textcolor{stringliteral}{"{})"{}} ;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00085}00085 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPPoint_a9b69bb0acf619ea31976924c3064658e}\label{classPPoint_a9b69bb0acf619ea31976924c3064658e}} 
+\index{PPoint@{PPoint}!set\_coordinates@{set\_coordinates}}
+\index{set\_coordinates@{set\_coordinates}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{set\_coordinates()}{set\_coordinates()}}
+{\footnotesize\ttfamily void PPoint\+::set\+\_\+coordinates (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+sets the coordinates of the \mbox{\hyperlink{classPPoint}{PPoint}} to the given x and y 
+
+method to set the coordinates of the points
+
+adds two \mbox{\hyperlink{classPPoint}{PPoint}} together 
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00075}00075 \{}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00076}00076     *(this-\/>\mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}}) = \mbox{\hyperlink{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}{x}};}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00077}00077     *(this-\/>y) = y;}
+\DoxyCodeLine{\Hypertarget{classPPoint_l00078}00078 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}\label{classPPoint_a50ba2cb0471d73e14f2c760e17e32a38}} 
+\index{PPoint@{PPoint}!x@{x}}
+\index{x@{x}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int$\ast$ PPoint\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+coordinates of the 2D points 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{PPoint_8hpp_source}{PPoint.\+hpp}}.
+
+\mbox{\Hypertarget{classPPoint_a5699b638053eea4bf624cf24b712cee3}\label{classPPoint_a5699b638053eea4bf624cf24b712cee3}} 
+\index{PPoint@{PPoint}!y@{y}}
+\index{y@{y}!PPoint@{PPoint}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int $\ast$ PPoint\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{PPoint_8hpp_source}{PPoint.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bdb/\+Documents/master/c/lab2/ex3/include/\mbox{\hyperlink{PPoint_8hpp}{PPoint.\+hpp}}\item 
+PPoint.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,236 @@
+\hypertarget{classArray__of__PPoint}{}\doxysection{Array\+\_\+of\+\_\+\+PPoint Class Reference}
+\label{classArray__of__PPoint}\index{Array\_of\_PPoint@{Array\_of\_PPoint}}
+
+
+A class defining an array of PPoints.  
+
+
+
+
+{\ttfamily \#include $<$PPoint.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}{Array\+\_\+of\+\_\+\+PPoint}} (const unsigned int \&len)
+\begin{DoxyCompactList}\small\item\em Default constructor, initializes every point to (0,0) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray__of__PPoint_ae196471e17097315758e97132cfd7561}{Array\+\_\+of\+\_\+\+PPoint}} (const unsigned int \&len, const unsigned int \&x0, const unsigned int \&x1, const unsigned int \&y0, const unsigned int \&y1)
+\item 
+\mbox{\Hypertarget{classArray__of__PPoint_a24313cfcd1145f90e3d49691d4530b6e}\label{classArray__of__PPoint_a24313cfcd1145f90e3d49691d4530b6e}} 
+{\bfseries Array\+\_\+of\+\_\+\+PPoint} (const \mbox{\hyperlink{classPPoint}{PPoint}} \&p)
+\item 
+\mbox{\hyperlink{classArray__of__PPoint_acdf1c05042ae129f0e1017b9e5262bd9}{Array\+\_\+of\+\_\+\+PPoint}} (const \mbox{\hyperlink{classArray__of__PPoint}{Array\+\_\+of\+\_\+\+PPoint}} \&p)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classArray__of__PPoint_a887749705f1616da199493f045b875a6}{$\sim$\+Array\+\_\+of\+\_\+\+PPoint}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}{add}} (const \mbox{\hyperlink{classPPoint}{PPoint}} \&p)
+\begin{DoxyCompactList}\small\item\em adds a \mbox{\hyperlink{classPPoint}{PPoint}} p to all the points in the array \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArray__of__PPoint_a36793c409f640dfc14b1ac5416ccdfc4}{print\+\_\+tabs}} ()
+\begin{DoxyCompactList}\small\item\em Print a nice looking tab containing the PPoints of the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPPoint}{PPoint}} $\ast$ \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}
+\begin{DoxyCompactList}\small\item\em pointer to the array\textquotesingle{}s beginning \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}
+\begin{DoxyCompactList}\small\item\em size of the array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class defining an array of PPoints. 
+
+the PPoints are stored dynamically, its size being given at construction. 
+
+Definition at line \mbox{\hyperlink{PPoint_8hpp_source_l00052}{52}} of file \mbox{\hyperlink{PPoint_8hpp_source}{PPoint.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}\label{classArray__of__PPoint_a6550552a7581ed3d80fe7a2c85933077}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{Array\_of\_PPoint()}{Array\_of\_PPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Array\+\_\+of\+\_\+\+PPoint\+::\+Array\+\_\+of\+\_\+\+PPoint (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{len }\end{DoxyParamCaption})}
+
+
+
+Default constructor, initializes every point to (0,0) 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00095}00095     \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}} = \textcolor{keyword}{new} \mbox{\hyperlink{classPPoint}{PPoint}}[len];}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00096}00096     \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}} = len;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00097}00097 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classArray__of__PPoint_ae196471e17097315758e97132cfd7561}\label{classArray__of__PPoint_ae196471e17097315758e97132cfd7561}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{Array\_of\_PPoint()}{Array\_of\_PPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Array\+\_\+of\+\_\+\+PPoint\+::\+Array\+\_\+of\+\_\+\+PPoint (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{len,  }\item[{const unsigned int \&}]{x0 = {\ttfamily 0},  }\item[{const unsigned int \&}]{x1 = {\ttfamily 5},  }\item[{const unsigned int \&}]{y0 = {\ttfamily 0},  }\item[{const unsigned int \&}]{y1 = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+random constructor, intitializes every point to a random value in (x0,x1) for the first coordinate and (y0, y1) for the second initialize the random seed
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00109}00109 \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00110}00110     srand (time(NULL)); }
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00111}00111     }
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00112}00112     \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}} = \textcolor{keyword}{new} \mbox{\hyperlink{classPPoint}{PPoint}}[len];}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00113}00113     \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}} = len;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00115}00115     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<len; i++)}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00116}00116     \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00117}00117         \textcolor{keywordtype}{int} x = rand() \% x1 + x0;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00118}00118         \textcolor{keywordtype}{int} y = rand() \% y1 + y0;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00119}00119         \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i].\mbox{\hyperlink{classPPoint_a9b69bb0acf619ea31976924c3064658e}{set\_coordinates}}(x,y);}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00121}00121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classArray__of__PPoint_acdf1c05042ae129f0e1017b9e5262bd9}\label{classArray__of__PPoint_acdf1c05042ae129f0e1017b9e5262bd9}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{Array\_of\_PPoint()}{Array\_of\_PPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Array\+\_\+of\+\_\+\+PPoint\+::\+Array\+\_\+of\+\_\+\+PPoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classArray__of__PPoint}{Array\+\_\+of\+\_\+\+PPoint}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00125}{125}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00126}00126 \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00127}00127     \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}} = \textcolor{keyword}{new} \mbox{\hyperlink{classPPoint}{PPoint}}[p.\mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}];}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00128}00128     \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}} = p.\mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}};}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00129}00129     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00130}00130        \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i] = p.\mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i]; }
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00132}00132     std::cout << \textcolor{stringliteral}{"{}calling array copy constructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00133}00133 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classArray__of__PPoint_a887749705f1616da199493f045b875a6}\label{classArray__of__PPoint_a887749705f1616da199493f045b875a6}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!````~Array\_of\_PPoint@{$\sim$Array\_of\_PPoint}}
+\index{````~Array\_of\_PPoint@{$\sim$Array\_of\_PPoint}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$Array\_of\_PPoint()}{~Array\_of\_PPoint()}}
+{\footnotesize\ttfamily Array\+\_\+of\+\_\+\+PPoint\+::$\sim$\+Array\+\_\+of\+\_\+\+PPoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00138}00138 \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00139}00139     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00140}00140         \textcolor{keyword}{delete} \&\mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i];}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00141}00141     \textcolor{keyword}{delete} \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}};}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00142}00142     std::cout << \textcolor{stringliteral}{"{}calling array destructor..."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00143}00143 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}\label{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!add@{add}}
+\index{add@{add}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Array\+\_\+of\+\_\+\+PPoint\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPPoint}{PPoint}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+adds a \mbox{\hyperlink{classPPoint}{PPoint}} p to all the points in the array 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00148}00148 \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00149}00149     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00150}00150         \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i].\mbox{\hyperlink{classArray__of__PPoint_ace86a2d9a2699f44b3c74d429dd4652a}{add}}(p);}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00151}00151 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classArray__of__PPoint_a36793c409f640dfc14b1ac5416ccdfc4}\label{classArray__of__PPoint_a36793c409f640dfc14b1ac5416ccdfc4}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!print\_tabs@{print\_tabs}}
+\index{print\_tabs@{print\_tabs}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{print\_tabs()}{print\_tabs()}}
+{\footnotesize\ttfamily void Array\+\_\+of\+\_\+\+PPoint\+::print\+\_\+tabs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print a nice looking tab containing the PPoints of the array. 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{PPoint_8cpp_source}{PPoint.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00156}00156 \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00157}00157     std::cout << \textcolor{stringliteral}{"{}index \(\backslash\)t (x,y)"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00158}00158     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}{length}}; i++)}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00159}00159     \{}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00160}00160         std::cout << \textcolor{stringliteral}{"{}["{}} << i << \textcolor{stringliteral}{"{}]\(\backslash\)t"{}};}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00161}00161         \mbox{\hyperlink{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}{array}}[i].\mbox{\hyperlink{classPPoint_a5044cbc28927b46c98219adbecea0f9e}{print}}();}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00162}00162         std::cout << std::endl;}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{classArray__of__PPoint_l00164}00164 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}\label{classArray__of__PPoint_afce7a167a896d1631259f4577fd78613}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!array@{array}}
+\index{array@{array}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{array}{array}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPPoint}{PPoint}}$\ast$ Array\+\_\+of\+\_\+\+PPoint\+::array\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the array\textquotesingle{}s beginning 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{PPoint_8hpp_source}{PPoint.\+hpp}}.
+
+\mbox{\Hypertarget{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}\label{classArray__of__PPoint_a79c5492112e232d85e06c0c26fc2e083}} 
+\index{Array\_of\_PPoint@{Array\_of\_PPoint}!length@{length}}
+\index{length@{length}!Array\_of\_PPoint@{Array\_of\_PPoint}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily unsigned int Array\+\_\+of\+\_\+\+PPoint\+::length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+size of the array 
+
+
+
+Definition at line \mbox{\hyperlink{PPoint_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{PPoint_8hpp_source}{PPoint.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bdb/\+Documents/master/c/lab2/ex3/include/\mbox{\hyperlink{PPoint_8hpp}{PPoint.\+hpp}}\item 
+PPoint.\+cpp\end{DoxyCompactItemize}
