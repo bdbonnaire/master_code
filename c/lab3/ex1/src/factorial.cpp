@@ -46,23 +46,30 @@ void fact_verbose(int n, int t)
 		case 0:
 			std::cout << "Size : " << sizeof(char) << "\n";
 			std::cout << fact<char>(n) << "\n";
+			break;
 		case 1:
 			std::cout << "Size : " << sizeof(short int) << "\n";
 			std::cout << fact<short int>(n) << "\n";
+			break;
 		case 2:
 			std::cout << "Size : " << sizeof(int) << "\n";
 			std::cout << fact<int>(n) << "\n";
+			break;
 		case 3:
 			std::cout << "Size : " << sizeof(long int) << "\n";
 			std::cout << fact<long int>(n) << "\n";
+			break;
 		case 4:
 			std::cout << "Size : " << sizeof(long long int) << "\n";
 			std::cout << fact<long long int>(n) << "\n";
+			break;
 		case 5:
 			std::cout << "Size : " << sizeof(__int128) << "\n";
 			std::cout << fact<__int128>(n) << "\n";
+			break;
 		default:
 			std::cerr << "Unkown type specified." << std::endl;
+			break;
 
 	}
 }
@@ -104,7 +111,7 @@ std::ostream &operator<<(std::ostream &o, __int128 value)
 		--head;
 		*head = '-';
 	}
-	o << buffer;
+	o << head;
 	return o;
 
 }
