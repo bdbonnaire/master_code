@@ -107,14 +107,28 @@ void init(MyCollection<int>& c, int k)
 		c.insert_elem(random);
 	}
 }
-
-void apply_fact(const MyCollection<int>& c, MyCollection<int>& res)
+template <class T> 
+void apply_fact(const MyCollection<int>& c, MyCollection<T>& res)
 {
 	//calculates the factorial of each element of c and put it in res
 	for( int i=0; i<c.get_size(); i++){
-		int facted = fact<int>(c.get_elem(i));
+		T facted = fact<T>(c.get_elem(i));
 		res.insert_elem(facted);
 	}
 }
+//
+// ------- Template apply_fact Available types -------------------//
+// char
+template void apply_fact(const MyCollection<int>& c, MyCollection<char>& res);
+//short int
+template void apply_fact(const MyCollection<int>& c, MyCollection<short int>& res);
+//int
+template void apply_fact(const MyCollection<int>& c, MyCollection<int>& res);
+//long int
+template void apply_fact(const MyCollection<int>& c, MyCollection<long int>& res);
+//long long int
+template void apply_fact(const MyCollection<int>& c, MyCollection<long long int>& res);
+// __int128
+template void apply_fact(const MyCollection<int>& c, MyCollection<__int128>& res);
 
 #endif

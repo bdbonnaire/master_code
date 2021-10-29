@@ -30,7 +30,7 @@ int main(){
 		collec;
 
 	MyCollection<int> res;
-	apply_fact(collec, res);	
+	apply_fact<int>(collec, res);	
 	cout << "Here is the factorial of every elements in the previous collection :\n" << res << endl;
 
 }
