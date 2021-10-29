@@ -26,6 +26,9 @@
  *  Description: General dynamic collection of elements.
  * =====================================================================================
  */
+template <class T> class MyCollection;
+template <class T>
+std::ostream& operator<<(std::ostream&, MyCollection<T>&);
 template < class T >
 class MyCollection
 {
@@ -36,13 +39,13 @@ class MyCollection
 
 		/* ====================  ACCESSORS     ======================================= */
 		T get_elem(int) const;
+		int get_size() const;
 
 		/* ====================  MUTATORS      ======================================= */
 		void insert_elem(T&);
 
 		/* ====================  OPERATORS     ======================================= */
-		template <class T2>
-		friend std::ostream& operator<<(std::ostream&, MyCollection<T2>&);
+		friend std::ostream& operator<< <>(std::ostream&, MyCollection<T>&);
 
 	private:
 		/* ====================  DATA MEMBERS  ======================================= */
@@ -53,7 +56,8 @@ class MyCollection
 
 }; /* ----------  end of template class MyCollection  ---------- */
 
-template <class T2>
-std::ostream& operator<<(std::ostream&, MyCollection<T2>&);
+
+void init(MyCollection<int>&, int);
+void apply_fact(const MyCollection<int>&, MyCollection<int>&);
 
 #endif
