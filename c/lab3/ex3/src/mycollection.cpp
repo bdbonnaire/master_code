@@ -18,7 +18,7 @@
 #ifndef MYCOLLECTION_CPP
 #define MYCOLLECTION_CPP
 
-#include <ostream>
+#include <iostream>
 #include <stdlib.h>
 #include "mycollection.hpp"
 #include "factorial.hpp"
@@ -56,9 +56,16 @@ template <class T>
 void MyCollection<T>::insert_elem(T &elem)
 {
 	if(current_nbr != max_elem)
+	{
 		array[current_nbr] = elem;
+		current_nbr++;
+	}
+
 	else
+	{
+		std::cerr << "Array is full \n";
 		throw("Array is full");
+	}
 }
 
 template <class T>
