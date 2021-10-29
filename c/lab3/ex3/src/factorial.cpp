@@ -82,6 +82,14 @@ T fact(int n)
 		temp = temp*i;
 	return temp;
 }
+// available types for fact
+//
+template char fact(int n);
+template short int fact(int n);
+template int fact(int n);
+template long int fact(int n);
+template long long int fact(int n);
+template __int128 fact(int n);
 
 std::ostream &operator<<(std::ostream &o, __int128 value)
 {

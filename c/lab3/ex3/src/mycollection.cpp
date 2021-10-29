@@ -82,8 +82,15 @@ std::ostream& operator<< (std::ostream& o, MyCollection<T> &collec)
 	return o;
 }
 
-//Definitions so that the linker doesn't go crazy
-template std::ostream& operator<< (std::ostream& o, MyCollection<char> &collec);
+//======= Definitions so that the linker doesn't go crazy ===============//
+//specification for char, so that it shows as an integer and 
+//not a character.
+template <> std::ostream& operator<< (std::ostream& o, MyCollection<char> &collec)
+{
+	for(int i=0; i<collec.current_nbr; i++)
+		o << "[" << i << "] : " <</*  Note the + here */ +collec.array[i] << "\n";
+	return o;
+}
 template std::ostream& operator<< (std::ostream& o, MyCollection<short int> &collec);
 template std::ostream& operator<< (std::ostream& o, MyCollection<int> &collec);
 template std::ostream& operator<< (std::ostream& o, MyCollection<long int> &collec);
