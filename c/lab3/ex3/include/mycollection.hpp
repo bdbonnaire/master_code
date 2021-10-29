@@ -57,7 +57,15 @@ class MyCollection
 }; /* ----------  end of template class MyCollection  ---------- */
 
 
-void init(MyCollection<int>&, int);
-void apply_fact(const MyCollection<int>&, MyCollection<int>&);
+/// initialize the collection with random int element
+void init(MyCollection<int>&, int, int, int);
+/// applies the factorial to every element in the first argument 
+// and put them in the second one.
+// The template is to choose the precision of the output to avoid
+// overflow
+// Available precision are :
+// 	char, short int, int, long int, long long int, __int128
+template <class T>
+void apply_fact(const MyCollection<int>&, MyCollection<T>&);
 
 #endif

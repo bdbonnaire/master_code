@@ -97,13 +97,20 @@ template class MyCollection<long long int>;
 template class MyCollection<__int128>;
 //-------------------- END MYCOLLECTION CLASS ---------------------------//
 
-void init(MyCollection<int>& c, int k)
+void init(MyCollection<int>& c, int k, int start, int end)
 {
 	// initialize k elements in the collection. The
-	// elements are pseudo randoms between 0 and 12.
+	// elements are pseudo randoms between args start and end.
 	srand(time(nullptr));
+
+	//if start and end are inverted switch them up
+	if(start > end){ 
+		start = start + end;
+		end = start - end;
+		start = start - end;
+	}
 	for(int i=0; i<k; i++){
-		int random = rand() % 13;
+		int random = start = rand() % (end - start);
 		c.insert_elem(random);
 	}
 }
