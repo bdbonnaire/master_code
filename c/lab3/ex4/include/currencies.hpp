@@ -15,6 +15,7 @@
  *
  * =====================================================================================
  */
+#include <ostream>
 
 class Dollar{
 	private:
@@ -24,6 +25,8 @@ class Dollar{
 		float get_value();
 };
 
+std::ostream& operator<<(std::ostream&, Dollar&);
+
 class Euro{
 	private:
 		const float amount;
@@ -31,6 +34,7 @@ class Euro{
 		Euro(const float);
 		float get_value();
 };
+std::ostream& operator<<(std::ostream&, Euro&);
 
 class Pounds{
 	private:
@@ -39,3 +43,4 @@ class Pounds{
 		Pounds(const float);
 		float get_value();
 };
+std::ostream& operator<<(std::ostream&, Pounds&);

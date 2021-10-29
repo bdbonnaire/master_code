@@ -35,3 +35,16 @@ Pounds::Pounds(const float value) : amount(value) {}
 float Pounds::get_value(){
 	return amount;
 }
+
+std::ostream& operator<<(std::ostream& o, Dollar& x){
+	o << x.get_value() << " $\n";
+	return o;
+}
+std::ostream& operator<<(std::ostream& o, Euro& x){
+	o << x.get_value() << " €\n";
+	return o;
+}
+std::ostream& operator<<(std::ostream& o, Pounds& x){
+	o << x.get_value() << " £\n";
+	return o;
+}
