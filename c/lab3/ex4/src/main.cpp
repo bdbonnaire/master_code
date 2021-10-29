@@ -64,6 +64,9 @@ template <class Type_currency> void make_account(string name, float amount){
 	cout << account;
 	cout << "CONGRATULATIONS !!! YOU WIN !!!";
 }
+template void make_account<Dollar>(string name, float amount);
+template void make_account<Euro>(string name, float amount);
+template void make_account<Pounds>(string name, float amount);
 
 int main(){
 

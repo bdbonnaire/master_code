@@ -31,6 +31,10 @@ bool Bank_account<Type_currency>::credit_balance(){
 	return amount.get_value();
 }
 
+template class Bank_account<Dollar>;
+template class Bank_account<Euro>;
+template class Bank_account<Pounds>;
+
 template <class Type_currency>
 std::ostream& operator<<(std::ostream &o, Bank_account<Type_currency> account)
 {
