@@ -22,7 +22,13 @@
  *  Description: A representation of a bank account, regadless of the currency 
  * =====================================================================================
  */
+#include <ostream>
 #include <string>
+
+template < class Type_currency >
+class Bank_account;
+template <class Type_currency>
+std::ostream& operator<<(std::ostream&, Bank_account<Type_currency>);
 
 template < class Type_currency >
 class Bank_account
@@ -39,6 +45,7 @@ class Bank_account
 		/* ====================  MUTATORS      ======================================= */
 
 		/* ====================  OPERATORS     ======================================= */
+		friend std::ostream& operator<< <>(std::ostream&, Bank_account<Type_currency>);
 
 	private:
 		/* ====================  DATA MEMBERS  ======================================= */

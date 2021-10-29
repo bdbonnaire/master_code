@@ -18,6 +18,7 @@
 #include <ostream>
 #include <stdlib.h>
 #include "bank_account.hpp"
+#include "currencies.hpp"
 
 template <class Type_currency>
 Bank_account<Type_currency>::Bank_account(std::string name, Type_currency amount){
@@ -31,7 +32,16 @@ bool Bank_account<Type_currency>::credit_balance(){
 }
 
 template <class Type_currency>
-std::ostream& operator<<(ostream &o, Bank_account accont)
+std::ostream& operator<<(std::ostream &o, Bank_account<Type_currency> account)
 {
-
+	o << "-| ACCOUNT OF : " << account.owner_name << " |-\n" <<
+		"|\n" <<
+		"| -- balance : " << account.amount <<
+		"|\n" <<
+		"|______ Have A NCE DAY.\n\n";
+	return o;
 }
+
+template std::ostream& operator<<(std::ostream &o, Bank_account<Dollar> account);
+template std::ostream& operator<<(std::ostream &o, Bank_account<Euro> account);
+template std::ostream& operator<<(std::ostream &o, Bank_account<Pounds> account);
