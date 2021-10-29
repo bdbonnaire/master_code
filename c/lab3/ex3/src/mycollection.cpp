@@ -96,6 +96,7 @@ template std::ostream& operator<< (std::ostream& o, MyCollection<int> &collec);
 template std::ostream& operator<< (std::ostream& o, MyCollection<long int> &collec);
 template std::ostream& operator<< (std::ostream& o, MyCollection<long long int> &collec);
 template std::ostream& operator<< (std::ostream& o, MyCollection<__int128> &collec);
+
 template class MyCollection<int>;
 template class MyCollection<char>;
 template class MyCollection<short int>;
@@ -117,7 +118,7 @@ void init(MyCollection<int>& c, int k, int start, int end)
 		start = start - end;
 	}
 	for(int i=0; i<k; i++){
-		int random = start = rand() % (end - start);
+		int random = start + rand() % (end - start);
 		c.insert_elem(random);
 	}
 }
