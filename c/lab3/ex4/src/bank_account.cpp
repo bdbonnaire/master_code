@@ -21,8 +21,7 @@
 #include "currencies.hpp"
 
 template <class Type_currency>
-Bank_account<Type_currency>::Bank_account(std::string name, Type_currency amount){
-	this->amount = amount;	
+Bank_account<Type_currency>::Bank_account(std::string name, Type_currency money) : amount(money){
 	owner_name = name;
 }
 
@@ -42,7 +41,7 @@ std::ostream& operator<<(std::ostream &o, Bank_account<Type_currency> account)
 		"|\n" <<
 		"| -- balance : " << account.amount <<
 		"|\n" <<
-		"|______ Have A NCE DAY.\n\n";
+		"|______ Have A NICE DAY.\n\n";
 	return o;
 }
 

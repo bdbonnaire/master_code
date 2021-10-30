@@ -25,6 +25,16 @@
 
 using namespace std;
 
+bool isNum(string s)
+{
+	locale loc;
+
+	for(unsigned long i=0; i < s.size(); i++)
+		if(! isdigit(s[0], loc))
+			return false;
+	return true;
+}
+
 void bad_ending(int kind)
 {
 	switch(kind){
@@ -60,9 +70,9 @@ void bad_ending(int kind)
 template <class Type_currency> void make_account(string name, float amount){
 	Type_currency balance(amount);
 	Bank_account<Type_currency> account(name, balance);
-    cout << "Congratulation Mr. " << name << ", your bank account is created. \n see for yourself :\n";
+    cout << "Congratulation Mr. " << name << ", your bank account is created. \n see for yourself :\n\n";
 	cout << account;
-	cout << "CONGRATULATIONS !!! YOU WIN !!!";
+	cout << "\n CONGRATULATIONS !!!";
 }
 template void make_account<Dollar>(string name, float amount);
 template void make_account<Euro>(string name, float amount);
@@ -70,38 +80,46 @@ template void make_account<Pounds>(string name, float amount);
 
 int main(){
 
-	locale loc;
 	cout << "Well well well... You'd like to have a bank account ? (Y/n) \n";
 	string answer = "";
-	cin >> answer;
-	if(answer == "y" || answer == "Y" || answer == ""){
+	getline( cin,  answer);
+	if(answer == "y" || answer == "Y" || answer.empty()){
 		cout << "Are you sure you can handle it ? (Y/n) \n";
-		cin >> answer;
+		getline( cin,  answer);
 
-		if(answer == "y" || answer == "Y" || answer == ""){
+		if(answer == "y" || answer == "Y" || answer.empty()){
 			cout << "Very well, what is your name kind sir ? \n ~~~> ";
 			string name;
-			cin >> name;
+			getline(cin, name);
 
 			cout << "How much money do you have ? \n ~~~> ";
+			string money;
 			float amount;
-			cin >> amount;
-			if(amount <= 10)
-			{
-				bad_ending(3);
+			
+			getline(cin, money);
+			if(isNum(money)){
+				amount = stof(money);
+				if(amount <= 10)
+				{
+					bad_ending(3);
+					return 0;
+				}
+			}
+			else{
+				bad_ending(1);
 				return 0;
 			}
 
+			answer.clear();
 			cout << " Do you carry dollaroos(0, default), euroos(1) or peonds (2) ?\n ~~~> ";
-			cin >> answer;
+			getline( cin,  answer);
 			if(answer == ""){
 				make_account<Dollar>(name, amount);
 				return 0;
 			}
 
-			if(isdigit(answer, loc)){
-				int choice;
-				stringstream(answer) >> choice;
+			if(isNum(answer)){
+				int choice = stoi(answer);
 				switch(choice) {
 				case 0:
 					make_account<Dollar>(name, amount);
@@ -128,12 +146,18 @@ int main(){
 	
 			}
 		}
-		else{
+		else if(answer == "n"){
 			bad_ending(2);
 		}
+		else{
+			bad_ending(1);
+		}
+	}
+	else if(answer == "n"){
+		bad_ending(2);
 	}
 	else{
-		bad_ending(2);
+		bad_ending(1);
 	}
 
 

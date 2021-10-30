@@ -35,8 +35,8 @@ class Bank_account
 {
 	public:
 		/* ====================  LIFECYCLE     ======================================= */
-		Bank_account (std::string name, Type_currency amount);                             /* constructor */
-//		Bank_account(Bank_account&);            /* copy constructor */
+		Bank_account (std::string name, Type_currency money);                             /* constructor */
+//		Bank_account(Bank_account&);            
 //		~Bank_account();
 
 		/* ====================  ACCESSORS     ======================================= */
