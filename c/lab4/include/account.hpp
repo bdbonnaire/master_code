@@ -38,8 +38,11 @@ class Account {
 		unsigned int id;
 
 	protected:
-
 		double balance;
+
+	public:
+		// returns the id of the account
+		unsigned int operator()();
 
 	// ---------------- Methods ---------------------
 

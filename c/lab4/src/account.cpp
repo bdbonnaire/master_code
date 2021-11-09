@@ -33,7 +33,7 @@ double Account::debit(double a)
 	return a;
 }
 
-unsigned int Account::get_id()
+unsigned int Account::operator()()
 {
 	return id;
 }
