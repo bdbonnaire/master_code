@@ -38,18 +38,20 @@ class Account {
 		unsigned int id;
 
 	protected:
-		// The constructor is made protected so that no element different from child can
-		// create a barebone bank account
-		Account(unsigned int id, double balance);
+
 		double balance;
 
-		// ---------------- Methods ---------------------
+	// ---------------- Methods ---------------------
+
+
 		// debits the account of amount a. Does not check the balance, it is a simple
 		// substraction. Returns the amount debited.
 		double debit(double a);
 
 
 	public:
+		Account(unsigned int id, double balance);
+
 		unsigned int get_id();
 		//adds a to the balance
 		void credit(double a);
@@ -60,19 +62,22 @@ class Account {
 //========================================= CURRENT CLASS ================================
 
 class Current : public Account {
+	// Almost vanilla flavor. Only modifies the debit method 
+	// checking that the client has enough to make the debit
+	using Account::Account;
 	public:
-		Current(unsigned int id, double balance);
+		double debit(double amount);	
 };
 
 //========================================= SAVINGS CLASS ==========================
 class Savings : public Account {
 	private: 
 		int interest_rate;
-		Savings(unsigned int id, double balance, int interest_rate);
 			
 	public:
+		Savings(unsigned int id, double balance, int interest_rate);
+
 		void add_interest();
-		void debit(double amount);	
 
 };
 
@@ -81,6 +86,7 @@ class Blocked : public Savings {
 
 	public:
 		Blocked(unsigned int id, double balance);
+		double debit(double amount);	
 };
 
 //==================================== UNBLOCKED =======================================
@@ -88,5 +94,6 @@ class Unblocked : public Savings {
 
 	public:
 		Unblocked(unsigned int id, double balance);
+		double debit(double amount);	
 };
 #endif
