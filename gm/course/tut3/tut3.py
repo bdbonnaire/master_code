@@ -1,35 +1,32 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
-#----------------------
-# discrete derivature
 def derivative(t,f):
     deriv_f = np.zeros(f.shape)
+    n = len(t)
     
-    #calculates the discrete derivative for all the elements except the last
-    for i in range(len(t)-1):
-        deriv_f[:,i] = (f[:,i]-f[:,i+1])/(t[i]-t[i+1])
-
-    # last element to avoid errors with the array overflow
-    deriv_f[:,len(t)-1] = (f[:,len(t)-2]-f[:,len(t)-1])/(t[len(t)-2]-t[len(t)-1])
+    h = t[0] - t[1]
+    
+    #calculates the discrete derivative for 
+    for i in range(n-1):
+        deriv_f[:,i] = (f[:,i]-f[:,i+1]) / h
+    # last 
+    deriv_f[:,n-1] = (f[:, n-3] - 4*f[:,n-2]+3*f[:,n-1]) / (2*(-h))
     
     return deriv_f
 
 def normal_vector(t,f):
     n = len(t)
-    tangent_f = np.zeros((3,n))
+    
+    tangent_f = np.zeros(f.shape)
     df = derivative(t,f)
-
-    #Calculation of the tangent vector
     for i in range(n) :
         tangent_f[:,i] = df[:,i] / np.linalg.norm(df[:,i],2)
     normal_f = derivative(t, tangent_f)
-
-    # Calculation of the normal vector
+    
     for i in range(n) :
         if np.linalg.norm(normal_f[:,i], 2) :
             normal_f[:,i] = normal_f[:,i] / np.linalg.norm(normal_f[:,i], 2)
-
+            
     return normal_f # normal_f is of size 3 x n
 
 def curvature(t, f):
@@ -38,21 +35,27 @@ def curvature(t, f):
     # calculating the derivatives
     d1_f = derivative(t,f)
     d2_f = derivative(t,d1_f)
-
+    
+    wedge = np.cross(d1_f.T, d2_f.T).T
+    
     # wedge product norm 
-    wedge = np.array( [ np.linalg.norm( np.cross(d1_f[:,i], d2_f[:,i]), ord=2 ) for i in range(n) ] )
+    wedge_norm = np.linalg.norm( wedge, ord=2, axis=0)
 
     # norm of the first derivative cubed
-    norm_d1_f_cubed = np.linalg.norm(d1_f, ord=2, axis=1)**3
+    norm_d1_f_cubed = np.linalg.norm(d1_f, ord=2, axis=0)**3
 
-    curvature_f = wedge / norm_d1_f_cubed
-
+    if f.shape[0] == 3 :
+        curvature_f = wedge_norm / norm_d1_f_cubed
+    elif f.shape[0] == 2:
+        curvature_f = wedge / norm_d1_f_cubed
+        
     return curvature_f
+
 
 def evolute(t,f):
     normal_f = normal_vector(t, f)
     k_f = curvature(t, f)
 
-    evolute_f = f + k_f**(-1) * normal_f
+    evolute_f = f + (1/k_f) * normal_f
     
     return evolute_f
