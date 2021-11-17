@@ -33,6 +33,9 @@ import matplotlib.pyplot as plt
 #
 #    return g
 
+
+hn_tilda = lambda n, f0 : 2*f0*np.sinc(2*np.pi*f0*(n-1/2))
+
 def f_h(f0, N):
     """
     Calculates the fourier transform of the filter h. 
@@ -44,19 +47,17 @@ def f_h(f0, N):
         S : complex ndarray = the shifted fourier transform of h
     """
         
-    hn_tilda = lambda n, f0 : 2*f0*np.sinc(2*np.pi*f0*(n-1/2))
     n = np.arange(-N//2, N//2)
     k = np.arange(N)
-    H = hn_tilda(n, 1/4)
-    S = np.exp(2j*np.pi*1/2*k)*fft.fft(H)
+    H = hn_tilda(n, f0)
+    S = fft.fft(H, 1024)
     S = fft.fftshift(S)
     
     return S
 
 def finite_impulse_response(f0, N):
-    h = f_h(f0, N)
-    h = fft.fftshift(h)
-    h = fft.ifft(h)
+    n = np.arange(-N//2, N//2)
+    h = hn_tilda(n, f0)
 
     w_h = lambda n : .54 - .46 * np.cos(2 * np.pi * n/N) 
 
@@ -65,13 +66,13 @@ def finite_impulse_response(f0, N):
 
     return g
 
-N=200
+N=10
 g = finite_impulse_response(1/4, N)
-f_g = fft.fft(g)
+f_g = fft.fft(g, 1024)
 f_g = fft.fftshift(f_g)
 
 S = f_h(1/4, N)
-n = np.arange(-N//2, N//2)
+n = np.arange(-1024//2, 1024//2)
 
 plt.plot(n,abs(f_g))
 plt.plot(n, abs(S))
