@@ -2,38 +2,7 @@ import numpy as np
 import numpy.fft as fft
 import matplotlib.pyplot as plt
 
-#def finite_impulse_response(f0, N):
-#    """
-#    Compute the finite impulse response for a signal of size N.
-#    Cut-off at frequency f0, supposed < 1/2.
-#    TODO : make different version depending on the parity of N
-#    """
-#    #coefficients h_n tilda computed theoretically of the truncated
-#    # filter
-#    hn_tilda = lambda n : 2 * f0 * np.sinc(2 * np.pi * f0 * (n-1/2))
-#
-#    #Hamming window coefficients
-#    w_h = lambda n : .54 - .46 * np.cos(2 * np.pi * n/N) 
-#
-#    n = np.arange(-N//2, N//2 -1)
-#    #Calculates the coefficients such that f_h[0] = hn_tilda[-N/2].
-#    #   thus needs shifting before ifft
-#    f_h = hn_tilda(n)
-#    #shifting
-#    f_h = fft.fftshift(f_h)
-#    
-#    h = fft.ifft(f_h)
-#
-#    # Creation of the Hamming window
-#    n = np.arange(N-1)
-#    W = w_h(n)
-#
-#    # calculating the response using Hamming window
-#    g = h*W
-#
-#    return g
-
-
+# the coefficients of h when N is even
 hn_tilda = lambda n, f0 : 2*f0*np.sinc(2*np.pi*f0*(n-1/2))
 
 def f_h(f0, N):
@@ -48,7 +17,6 @@ def f_h(f0, N):
     """
         
     n = np.arange(-N//2, N//2)
-    k = np.arange(N)
     H = hn_tilda(n, f0)
     S = fft.fft(H, 1024)
     S = fft.fftshift(S)
@@ -56,6 +24,15 @@ def f_h(f0, N):
     return S
 
 def finite_impulse_response(f0, N):
+    """
+    Calculates the finite impulse response with the hamming window.
+    Parameters:
+        f0 : float = cutoff frequency
+        N : int = number of coefficients to keep. N is supposed even
+
+    Returns :
+        g : ndarray = fourier coefficients of the finite impulse response.
+    """
     n = np.arange(-N//2, N//2)
     h = hn_tilda(n, f0)
 
@@ -66,13 +43,14 @@ def finite_impulse_response(f0, N):
 
     return g
 
-N=10
-g = finite_impulse_response(1/4, N)
+N=100
+f0 = 1/3
+g = finite_impulse_response(f0, N)
 f_g = fft.fft(g, 1024)
 f_g = fft.fftshift(f_g)
 
-S = f_h(1/4, N)
-n = np.arange(-1024//2, 1024//2)
+S = f_h(f0, N)
+n = np.arange(-1024//2, 1024//2) / 1024
 
 plt.plot(n,abs(f_g))
 plt.plot(n, abs(S))
