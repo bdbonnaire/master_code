@@ -3,7 +3,7 @@ import numpy.fft as fft
 import matplotlib.pyplot as plt
 
 # the coefficients of h when N is even
-hn_tilda = lambda n, f0 : 2*f0*np.sinc(2*np.pi*f0*(n-1/2))
+hn_tilda = lambda n, f0 : 2*f0*np.sinc(2*f0*(n-1/2))
 
 def f_h(f0, N):
     """
@@ -52,6 +52,9 @@ f_g = fft.fftshift(f_g)
 S = f_h(f0, N)
 n = np.arange(-1024//2, 1024//2) / 1024
 
-plt.plot(n,abs(f_g))
-plt.plot(n, abs(S))
+plt.plot(n,abs(f_g), label="Hamming_window")
+plt.plot(n, abs(S), label="rectangular window")
+plt.axvline(-f0, color='C7', ls='--')
+plt.axvline(f0, color='C7', ls='--', label=r"$\pm f_0$")
+plt.legend();
 plt.show();
