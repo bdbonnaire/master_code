@@ -44,7 +44,7 @@ def finite_impulse_response(f0, N):
     return g
 
 N=100
-f0 = 1/3
+f0 = 1/4
 g = finite_impulse_response(f0, N)
 f_g = fft.fft(g, 1024)
 f_g = fft.fftshift(f_g)
