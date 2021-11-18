@@ -44,7 +44,7 @@ N = np.arange(-1024//2, 1024//2) / 1024
 plt.axvline(f1 + f0, linestyle ='--', color='C7')
 plt.axvline(-(f1 + f0), linestyle ='--', color='C7')
 plt.axvline(f0, linestyle ='--', color='C7')
-plt.axvline(-f0, linestyle ='--', color='C7', label =r"$\pm f_0 and \pm f_0 + f_1")
+plt.axvline(-f0, linestyle ='--', color='C7', label =r"$\pm f_0 and \pm f_0 + f_1$")
 
 #bandpass filter
 plt.plot(N, np.abs(H), label="Band-pass filter")
@@ -52,4 +52,5 @@ plt.suptitle("Band-pass filter using Hamming Window", fontsize=16)
 plt.title(r"50 coefficients kept, $f_0 = \frac{1}{8}$ and $f_1 = \frac{1}{4}$")
 plt.xlabel("frequency")
 plt.ylabel("Magnitude")
+plt.legend()
 plt.show()
