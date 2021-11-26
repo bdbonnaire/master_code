@@ -41,6 +41,8 @@ class Account {
 		double balance;
 
 	public:
+		Account(unsigned int id, double balance=0);
+		Account();
 		// returns the id of the account
 		unsigned int operator()();
 
@@ -51,11 +53,6 @@ class Account {
 		// substraction. Returns the amount debited.
 		double debit(double a);
 
-
-	public:
-		Account(unsigned int id, double balance);
-
-		unsigned int get_id();
 		//adds a to the balance
 		void credit(double a);
 		// print the attributes to the specified ostream
@@ -67,6 +64,8 @@ class Account {
 class Current : public Account {
 	// Almost vanilla flavor. Only modifies the debit method 
 	// checking that the client has enough to make the debit
+	
+	// Telling to use the constructor of parent class
 	using Account::Account;
 	public:
 		double debit(double amount);	
@@ -78,7 +77,8 @@ class Savings : public Account {
 		int interest_rate;
 			
 	public:
-		Savings(unsigned int id, double balance, int interest_rate);
+		Savings(unsigned int id, double balance, float interest_rate);
+		Savings();
 
 		void add_interest();
 
@@ -89,6 +89,7 @@ class Blocked : public Savings {
 
 	public:
 		Blocked(unsigned int id, double balance);
+		Blocked();
 		double debit(double amount);	
 };
 
@@ -97,6 +98,7 @@ class Unblocked : public Savings {
 
 	public:
 		Unblocked(unsigned int id, double balance);
+		Unblocked();
 		double debit(double amount);	
 };
 #endif

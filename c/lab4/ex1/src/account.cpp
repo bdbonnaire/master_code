@@ -29,7 +29,7 @@ Account::Account(unsigned int id, double balance)
 
 double Account::debit(double a)
 {
-	id -= a;
+	balance -= a;
 	return a;
 }
 
@@ -58,13 +58,13 @@ void Account::print(std::ostream &o)
 double Current::debit(double a)
 {
 	// variable holding the actual debited value
-	double actual_debit(balance >= a ? a : balance);
+	double actual_debit = balance >= a ? a : balance;
 	return this->Account::debit(actual_debit);
 }
 
 //====================== CLASS : SAVING ===============================
 
-Savings::Savings(unsigned int id, double balance, int interest_rate) :
+Savings::Savings(unsigned int id, double balance, float interest_rate) :
 	Account(id, balance)
 {
 	this->interest_rate = interest_rate;

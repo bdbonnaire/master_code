@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  main.cpp
+ *       Filename:  client.cpp
  *
- *    Description:  
+ *    Description: implementation of client.hpp 
  *
  *        Version:  1.0
- *        Created:  11/09/21 12:38:36
+ *        Created:  11/16/21 00:23:15
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -17,10 +17,15 @@
  */
 #include <stdlib.h>
 #include "account.hpp"
+#include "client.hpp"
 
-int main()
+Client::Client(unsigned int i, std::string n, Current *c, Unblocked *u) : name(n), id(i)
+{
+	current = c;
+	savings = u;
+}
+
+~Client()
 {
 
-
-	return 0;
 }
