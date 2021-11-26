@@ -41,7 +41,7 @@ void test_credit(T &A, double amount)
 int main()
 {
 	// creating test objects
-	Account account(1, 123.4);
+	Account account/*(1, 123.4)*/;
 	Current current(2, 325.4);
 	Savings savings(3, 3333.33, 2.6);
 	Blocked blocked(4, 32323.95);

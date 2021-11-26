@@ -39,9 +39,14 @@ class Account {
 
 	protected:
 		double balance;
+		// gets how many accounts were created and 
+		// initialize the id as the incremented number
+		// Updates the file by incremented value
+		unsigned int get_and_update_nbrAccounts();
 
 	public:
 		Account(unsigned int id, double balance=0);
+		Account(double balance);
 		Account();
 		// returns the id of the account
 		unsigned int operator()();
@@ -49,7 +54,8 @@ class Account {
 	// ---------------- Methods ---------------------
 
 
-		// debits the account of amount a. Does not check the balance, it is a simple
+		// debits the account of amount a. Does not 
+		// check the balance, it is a simple
 		// substraction. Returns the amount debited.
 		double debit(double a);
 

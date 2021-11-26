@@ -21,6 +21,35 @@
 #include "account.hpp"
 
 // ===================== CLASS : ACCOUNT ==============================
+unsigned int Account::get_and_update_nbrAccounts()
+{
+
+	//============ id generation from a file ============
+	// reading the file 
+	// if the file does not exist it is created
+	std::fstream ids("ids.txt");
+	int current_id = -1;
+	if(ids.is_open())
+	{
+		ids >> current_id;
+		ids.close();
+//		if the file did not exist it was created empty and 
+//		current_id is still -1
+	}
+	
+	current_id++;
+	// defining the account id
+
+	// adding 1 to the file
+	ids.open("ids.txt", std::ios::out | std::ios::trunc);
+	if(ids.is_open())
+	{
+		ids << current_id;
+		ids.close();
+	}
+
+	return current_id;
+}
 
 Account::Account(unsigned int id, double balance)
 {
@@ -28,32 +57,20 @@ Account::Account(unsigned int id, double balance)
 	this->balance = balance;
 }
 
+Account::Account(double balance)
+{
+	this->balance = balance;
+	id = get_and_update_nbrAccounts();
+}
+
 Account::Account()
 {
 	balance = 0;
-
-	//============ id generation from a file ============
-	// reading the file 
-	std::fstream ids("../misc/ids");
-	int current_id = -1;
-	if(ids.is_open())
-	{
-		ids >> current_id;
-		ids.close();
-	}
-	
-	current_id++;
-	id = current_id;
-
-	// adding 1 to the file
-	ids.open("../misc/ids", std::ios::out | std::ios::trunc);
-	if(ids.is_open())
-	{
-		ids << current_id;
-		ids.close();
-	}
-
+	id = get_and_update_nbrAccounts();
 }
+
+
+
 double Account::debit(double a)
 {
 	balance -= a;
