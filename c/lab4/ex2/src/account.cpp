@@ -51,25 +51,11 @@ unsigned int Account::get_and_update_nbrAccounts()
 	return current_id;
 }
 
-Account::Account(unsigned int id, double balance)
-{
-	this->id = id;
-	this->balance = balance;
-}
-
 Account::Account(double balance)
 {
 	this->balance = balance;
 	id = get_and_update_nbrAccounts();
 }
-
-Account::Account()
-{
-	balance = 0;
-	id = get_and_update_nbrAccounts();
-}
-
-
 
 double Account::debit(double a)
 {
@@ -108,12 +94,6 @@ double Current::debit(double a)
 
 //====================== CLASS : SAVING ===============================
 
-Savings::Savings(unsigned int id, double balance, float interest_rate) :
-	Account(id, balance)
-{
-	this->interest_rate = interest_rate;
-}
-
 Savings::Savings(double balance, float interest_rate) :
 	Account(balance)
 {
@@ -125,9 +105,6 @@ void Savings::add_interest()
 	balance += balance*interest_rate;
 }
 //===================== CLASS : BLOCKED ===============================
-Blocked::Blocked(unsigned int id, double balance) : 
-	Savings(id, balance, IRATEBLOCKED) {}
-
 Blocked::Blocked(double balance) : 
 	Savings(balance, IRATEBLOCKED) {}
 
@@ -135,10 +112,7 @@ double Blocked::debit(double amount)
 {
 	return -1;
 }
-//===================== CLASS : BLOCKED ===============================
-Unblocked::Unblocked(unsigned int id, double balance) : 
-	Savings(id, balance, IRATEUNBLOCKED) {}
-
+//===================== CLASS : UNBLOCKED ===============================
 Unblocked::Unblocked(double balance) : 
 	Savings(balance, IRATEUNBLOCKED) {}
 

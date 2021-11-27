@@ -15,6 +15,8 @@
  *
  * =====================================================================================
  */
+#ifndef CLIENT_H
+#define CLIENT_H
 
 #include <ostream>
 #include <string>
@@ -27,13 +29,13 @@ class Client
 		unsigned int id;
 		Current *current;
 		Unblocked *savings;
+		unsigned int get_and_update_nbrClients();
 		
 	public:
-		Client(unsigned int i, std::string n, 
-				Current *c=NULL, Unblocked *u=NULL);
-		~Client();
+		Client(std::string n, Current *c=NULL, 
+				Unblocked *u=NULL);
 		// returns the id of the client
-		unsigned int operator()();
+		unsigned int operator()() const;
 
 		void credit_current(double amount);	
 		void credit_saving(double amount);	
@@ -41,9 +43,12 @@ class Client
 		void debit_current(double amount);	
 		void debit_saving(double amount);	
 
-		// The operator prints the attributes the client and
-		// the details of its bank account.
+		// The operator prints the attributes of the client and
+		// the details of its bank accounts.
+		// !!! CHECK IF THE POINTERS ARE NULL !!!
 		friend std::ostream &operator<<(std::ostream &o, Client &c);
 };
 
 std::ostream &operator<<(std::ostream &o, Client &c);
+
+#endif

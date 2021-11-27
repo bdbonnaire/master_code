@@ -1,6 +1,6 @@
 CC = g++
 CXXFLAGS = -I../include -g
-SRCS = account.cpp main.cpp
+SRCS = account.cpp client.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 EXEC = ../bin
 

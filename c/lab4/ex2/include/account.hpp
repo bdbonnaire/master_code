@@ -45,9 +45,7 @@ class Account {
 		unsigned int get_and_update_nbrAccounts();
 
 	public:
-		Account(unsigned int id, double balance=0);
-		Account(double balance);
-		Account();
+		Account(double balance=0);
 		// returns the id of the account
 		unsigned int operator()();
 
@@ -83,7 +81,7 @@ class Savings : public Account {
 		int interest_rate;
 			
 	public:
-		Savings(unsigned int id, double balance, float interest_rate);
+		Savings(double balance, float interest_rate);
 		Savings();
 
 		void add_interest();
@@ -94,7 +92,7 @@ class Savings : public Account {
 class Blocked : public Savings {
 
 	public:
-		Blocked(unsigned int id, double balance);
+		Blocked(double balance);
 		Blocked();
 		double debit(double amount);	
 };
@@ -103,8 +101,7 @@ class Blocked : public Savings {
 class Unblocked : public Savings {
 
 	public:
-		Unblocked(unsigned int id, double balance);
-		Unblocked();
+		Unblocked(double balance=0);
 		double debit(double amount);	
 };
 #endif
