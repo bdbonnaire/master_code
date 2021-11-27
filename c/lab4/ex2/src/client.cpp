@@ -25,6 +25,12 @@ Client::Client(unsigned int i, std::string n, Current *c, Unblocked *u) : name(n
 	savings = u;
 }
 
+Client::Client(Client &c) : name(c.name), id(c.id)
+{
+	current = new Current();
+	savings = new Unblocked;
+
+}
 ~Client()
 {
 

@@ -114,6 +114,12 @@ Savings::Savings(unsigned int id, double balance, float interest_rate) :
 	this->interest_rate = interest_rate;
 }
 
+Savings::Savings(double balance, float interest_rate) :
+	Account(balance)
+{
+	this->interest_rate = interest_rate;
+}
+
 void Savings::add_interest()
 {
 	balance += balance*interest_rate;
@@ -122,6 +128,9 @@ void Savings::add_interest()
 Blocked::Blocked(unsigned int id, double balance) : 
 	Savings(id, balance, IRATEBLOCKED) {}
 
+Blocked::Blocked(double balance) : 
+	Savings(balance, IRATEBLOCKED) {}
+
 double Blocked::debit(double amount)
 {
 	return -1;
@@ -129,6 +138,9 @@ double Blocked::debit(double amount)
 //===================== CLASS : BLOCKED ===============================
 Unblocked::Unblocked(unsigned int id, double balance) : 
 	Savings(id, balance, IRATEUNBLOCKED) {}
+
+Unblocked::Unblocked(double balance) : 
+	Savings(balance, IRATEUNBLOCKED) {}
 
 // Debits the account only if the amount is smaller than 
 // the balance

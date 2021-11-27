@@ -41,11 +41,11 @@ void test_credit(T &A, double amount)
 int main()
 {
 	// creating test objects
-	Account account/*(1, 123.4)*/;
-	Current current(2, 325.4);
-	Savings savings(3, 3333.33, 2.6);
-	Blocked blocked(4, 32323.95);
-	Unblocked unblocked(5, 2322);
+	Account account(123.4);
+	Current current(325.4);
+	Savings savings(3333.33, 2.6);
+	Blocked blocked(32323.95);
+	Unblocked unblocked(2322);
 
 	std::cout << "######### \nTesting a debit of 1\n######### ";
 
