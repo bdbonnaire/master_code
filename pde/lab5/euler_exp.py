@@ -34,4 +34,4 @@ def euler_ext(T, N, M, u0):
         for j in np.arange(1, M-1): # boundary condition are already taken care of
             u[n+1, j] = u[n, j] v * dt * ( u[n, j+1] - 2*u[n, j] + u[n, j-1] ) / (dx**2)
 
-return u
+    return u
