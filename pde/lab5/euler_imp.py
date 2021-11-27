@@ -18,7 +18,7 @@ def euler_imp(T, N, M, u0):
         u: NxM ndarray = approximation of the solution. The first axis gives
             time, the second space.
     """
-    v = 1/ (np.pi**2)
+    v = 1 / (np.pi**2)
 
     # spacings
     dt = T / N
@@ -36,14 +36,14 @@ def euler_imp(T, N, M, u0):
     # introducing matrices to solve the linear equations
     A = np.zeros((M,M))
     A[0,0] = 1
-    A[M,M] = 1
+    A[M-1,M-1] = 1
 
     for j in np.arange(1, M-1):
         A[j, j-1] = -l
         A[j, j] = 2*l+1
         A[j, j+1] = -l
 
-    for n in np.arange(1, N):
+    for n in np.arange(0, N-1):
         u[n+1] = np.linalg.solve(A, u[n])
 
     return u

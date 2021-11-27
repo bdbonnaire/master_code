@@ -1,6 +1,6 @@
 import numpy as np
 
-def euler_ext(T, N, M, u0):
+def euler_exp(T, N, M, u0):
     """
     Approximates, using Euler 2nd order explicit in space scheme,
     the solution to the 1D diffusion equation. 
@@ -23,6 +23,7 @@ def euler_ext(T, N, M, u0):
     # spacings
     dt = T / N
     dx = 1 / M
+    print(dt/(dx**2))
 
     t = np.linspace(0, T, N)
     x = np.linspace(0, 1, M)
@@ -31,7 +32,7 @@ def euler_ext(T, N, M, u0):
     u[0] = u0(x)
 
     for n in np.arange(0, N-1):
-        for j in np.arange(1, M-1): # boundary condition are already taken care of
-            u[n+1, j] = u[n, j] v * dt * ( u[n, j+1] - 2*u[n, j] + u[n, j-1] ) / (dx**2)
+        for j in np.arange(1, M-1): 
+            u[n+1, j] = u[n, j] + v * dt * ( u[n, j+1] - 2*u[n, j] + u[n, j-1] ) / (dx**2)
 
     return u

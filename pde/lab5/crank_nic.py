@@ -1,6 +1,6 @@
 import numpy as np
 
-def crank_nic(N, M, u0):
+def crank_nic(T, N, M, u0):
     """
     Approximates, using Crank-Nicolson scheme,
     the solution to the 1D diffusion equation. 
@@ -27,7 +27,7 @@ def crank_nic(N, M, u0):
     t = np.linspace(0, T, N)
     x = np.linspace(0, 1, M)
 
-    u = np.zeros((N, M))
+    u = np.zeros((N, M), dtype=float)
     u[0] = u0(x)
 
     # definition of a constant to make things more readable
@@ -36,7 +36,7 @@ def crank_nic(N, M, u0):
     # introducing matrices to solve the linear equations
     A = np.zeros((M,M))
     A[0,0] = 1
-    A[M,M] = 1
+    A[M-1,M-1] = 1
 
     for j in np.arange(1, M-1):
         A[j, j-1] = -l
@@ -45,9 +45,11 @@ def crank_nic(N, M, u0):
 
     B = np.zeros(M)
 
-    for n in np.arange(1, N):
-        for i in arange(1, M-1):
-            B[i] = l*u[n, i-1] + (1-2*l)*u[n,i] + l*[n, i+1]
+    for n in np.arange(0, N-1):
+        # definition of the second part of the equation
+        for i in np.arange(1, M-1):
+            B[i] = l*u[n, i-1] + (1-2*l)*u[n,i] + l*u[n, i+1]
+
         u[n+1] = np.linalg.solve(A, B)
 
     return u
