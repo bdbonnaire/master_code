@@ -33,7 +33,6 @@
  * 	the definition.
  * 	I will also define the operator<< overloading on the Account
  * 	class.
- */
 int main()
 {
 	// creating test objects
