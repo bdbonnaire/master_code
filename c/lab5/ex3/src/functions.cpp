@@ -31,7 +31,7 @@ void Function::print(std::ostream& o)
 
 //////////////////// Poly0 Class //////////////////
 
-Poly0::Poly0(std::string n, float c0) :
+Poly0::Poly0(std::string n, double c0) :
 	Function(n),
 	a0(c0)
 {}
@@ -54,46 +54,50 @@ void Poly0::print(std::ostream& o)
 
 //////////////////// Poly1 Class //////////////////
 
-Poly0::Poly0(std::string n, float c0) :
+Poly1::Poly1(std::string n, double c0, double c1) :
 	Function(n),
-	a0(c0)
+	a0(c0),
+	a1(c1)
 {}
 
-double Poly0::eval(double x0)
+double Poly1::eval(double x0)
 {
-	return a0;
+	return a1*x0 + a0;
 }
 
-Function* Poly0::derivative()
+Function* Poly1::derivative()
 {
-	return new Poly0(name + "'", 0);
+	return new Poly0(name + "'", a1);
 }
 
-void Poly0::print(std::ostream& o)
+void Poly1::print(std::ostream& o)
 {
 	Function::print(o);
-	o << a0 << std::endl;
+	o << a1 << "x + " << a0 << std::endl;
 }
 
-//////////////////// Poly0 Class //////////////////
+//////////////////// Poly2 Class //////////////////
 
-Poly0::Poly0(std::string n, float c0) :
+Poly2::Poly2(std::string n, double c0, double c1, double c2) :
 	Function(n),
-	a0(c0)
+	a0(c0),
+	a1(c1),
+	a2(c2)
 {}
 
-double Poly0::eval(double x0)
+double Poly2::eval(double x0)
 {
-	return a0;
+	return a2*x0*x0 + a1*x0 + a0;
 }
 
-Function* Poly0::derivative()
+Function* Poly2::derivative()
 {
-	return new Poly0(name + "'", 0);
+	return new Poly1(name + "'", a1, 2*a2);
 }
 
-void Poly0::print(std::ostream& o)
+void Poly2::print(std::ostream& o)
 {
 	Function::print(o);
-	o << a0 << std::endl;
+	o << a2 << "x² + " << a1 << "x + " << a0 << std::endl;
 }
+
