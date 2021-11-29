@@ -1,0 +1,12 @@
+--[ ID = 8	 NAME = Roger ]-- 
+|
+|- Accounts : 
+ *** Current Account *** 
+Account ID : 25
+ Current Balance : 0
+
+*** Unblocked Savings Account *** 
+Account ID : 26
+ Current Balance : 0
+Interest Rate : 2
+

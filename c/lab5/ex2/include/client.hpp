@@ -38,6 +38,8 @@ class Client
 	public:
 		Client(std::string n, unsigned int max_account);
 		Client(std::string n, unsigned int max_account, unsigned int id);
+		Client(const Client &c);
+
 		// returns the id of the client
 		unsigned int operator()() const;
 

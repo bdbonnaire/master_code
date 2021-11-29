@@ -16,6 +16,7 @@
  * =====================================================================================
  */
 #include <iostream>
+#include <iterator>
 #include <stdlib.h>
 #include <fstream>
 #include "account.hpp"
@@ -23,14 +24,29 @@
 
 //_________________ Client Constructors ___________________//
 
-Client::Client(std::string n,unsigned int max) : name(n), max_account(max)
+Client::Client(std::string n,unsigned int max) : name(n),
+   	max_account(max),
+	current_nbr_accounts(0)
 {
 	id = get_and_update_nbrClients();
 }
 
 // constructor for setting the client id manually
-Client::Client(std::string n,unsigned int max, unsigned int i) : name(n), id(i), max_account(max) {}
+Client::Client(std::string n,unsigned int max, unsigned int i) :
+   	name(n), 
+	id(i), 
+	max_account(max),
+	current_nbr_accounts(0)
 
+{}
+
+//Copy constructor
+Client::Client(const Client &c) : name(c.name), 
+	id(c.id),
+	accounts(c.accounts),
+	max_account(c.max_account), 
+	current_nbr_accounts(c.current_nbr_accounts)
+{}
 	
 //________________ Client ID Generation _________________//
 
@@ -101,23 +117,26 @@ void Client::createAccount()
 
 		if(isdigit(answer[0]))
 		{
-			switch (answer[0])
+			switch (stoi(answer))
 			{
 				case 1:
 				{
 					accounts.push_back(new Current);
+					current_nbr_accounts++;
 					correct = true;
 					break;
 				}
 				case 2:
 				{
 					accounts.push_back(new Unblocked);
+					current_nbr_accounts++;
 					correct = true;
 					break;
 				}
 				case 3:
 				{
 					accounts.push_back(new Blocked);
+					current_nbr_accounts++;
 					correct = true;
 					break;
 				}
@@ -129,17 +148,34 @@ void Client::createAccount()
 					break;
 				}
 			}
-
 		}
+		else
+		{
+			std::cout << "Bad entry, please try again" << std::endl;
+			// if wrong answer var is emptied out
+			answer = "";
+		}
+
+		
 	}while (correct != true);
 }
 
-// !!!!!!!!!! REDO !!!!!!!!!!!!
 std::ostream &operator<<(std::ostream &o, Client &c)
 {
 	o <<  "--[ ID = " << c() << "\t NAME = " << c.name << " ]-- \n" <<
 		"|\n" <<
 		"|- Accounts : \n";
+	if(!c.accounts.empty())
+	{
+		for(std::vector<Account*>::iterator i = std::begin(c.accounts); i != c.accounts.end(); i++)
+		{
+			o << *(*i) << "\n";
+		}
+	}
+	else
+	{
+		o << "-- No account --" << std::endl;
+	}
 	
 	return o;
 }

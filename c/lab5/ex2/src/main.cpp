@@ -17,40 +17,34 @@
  */
 #include <stdlib.h>
 #include <iostream>
-#include "account.hpp"
+#include <fstream>
+#include "client.hpp"
 
-/* Answers :
- *
- * Why is polymorphism useful here ?
- * 	Polymorphism allows us to define a purely virtual function in the
- * 	Account class but still be able to use it in a general function,
- * 	ie a function that acts on all the children of Account class.
- *
- * 	What needs to be modified ?
- * 	In my code I have to modify every implementation of the debit
- * 	method as I used Account.debit everywhere. Had I not not done
- * 	that I would only have to declare debit as virtual and remove
- * 	the definition.
- * 	I will also define the operator<< overloading on the Account
- * 	class.
 int main()
 {
-	// creating test objects
-	Current current(325.4);
-	Unblocked savings(3333.33);
-	Blocked blocked(231.33);
+	// creating a client called Roger
+	Client roger("Roger", 4);
+	
+	//adding two accounts to Roger
+	roger.createAccount();
+	roger.createAccount();
 
-	std::cout << current;
-	std::cout << savings;
-	std::cout << blocked;
+	//displaying Roger
+	std::cout << roger << std::endl;
 
-	current.debit(231);
-	savings.debit(231);
-	blocked.debit(231);
+	// copying Roger
+	Client roger2(roger);
+	std::cout << roger2 << std::endl;
 
-	std::cout << current;
-	std::cout << savings;
-	std::cout << blocked;
+	//putting Roger into a file and hoping he stays there
+	std::fstream roger3_the_file;
+
+	roger3_the_file.open("roger3_the_file.txt", std::ios::out | std::ios::trunc);
+	if(roger3_the_file.is_open())
+	{
+		roger3_the_file << roger;
+		roger3_the_file.close();
+	}
 
 	return 0;
 }

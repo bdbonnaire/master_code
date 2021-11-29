@@ -97,8 +97,7 @@ class Savings : public Account {
 class Blocked : public Savings {
 
 	public:
-		Blocked(double balance);
-		Blocked();
+		Blocked(double balance=0);
 		double debit(double amount);	
 		void print(std::ostream &o);
 };
